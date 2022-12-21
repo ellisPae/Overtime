@@ -1,1 +1,10 @@
 <h1>Posts</h1>
+
+<%= @posts.each do |post| %>
+  <ul>
+    <li><%= post.user.full_name %></li>
+    <li><%= post.date %></li>
+    <li><%= post.rationale %></li>
+    <br>
+  <ul>
+<% end %>

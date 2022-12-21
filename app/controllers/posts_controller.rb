@@ -7,10 +7,12 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-  # just renders teh new form
+  # just renders the new form
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    # devise provides current_user
 
     if @post.save
       redirect_to @post, notice: "Your post was successfully created"
